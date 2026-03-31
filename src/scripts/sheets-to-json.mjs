@@ -14,8 +14,10 @@ const OUT = path.join(ROOT, "src", "data");
 const SHEET_ID = process.env.GOOGLE_SHEET_ID_UPLOADER;
 const SA_B64 = process.env.GOOGLE_SA_JSON_BASE64;
 
-if (!SHEET_ID) throw new Error("Missing env GOOGLE_SHEET_ID");
-if (!SA_B64) throw new Error("Missing env GOOGLE_SA_JSON_BASE64");
+if (!SHEET_ID || !SA_B64) {
+  console.warn("⚠️  Missing Google Sheets credentials — skipping sync, using committed data.");
+  process.exit(0);
+}
 
 const SA_JSON = JSON.parse(Buffer.from(SA_B64, "base64").toString("utf8"));
 const fixedKey = String(SA_JSON.private_key || "").replace(/\\n/g, "\n");
