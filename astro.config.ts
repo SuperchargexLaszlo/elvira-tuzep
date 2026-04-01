@@ -95,25 +95,13 @@ export default defineConfig({
   },
 
   vite: {
-    plugins: [
-      {
-        name: 'fix-medusa-esm-dir-imports',
-        enforce: 'pre' as const,
-        resolveId(id: string, importer: string | undefined) {
-          if (!importer?.includes('@medusajs/js-sdk')) return;
-          if (['./admin', './auth', './client', './store'].includes(id)) {
-            return path.resolve(path.dirname(importer), id.slice(2) + '/index.js');
-          }
-        }
-      }
-    ],
     resolve: {
       alias: {
         '~': path.resolve(__dirname, './src'),
       },
     },
     optimizeDeps: {
-      include: ["@medusajs/js-sdk"],
+      exclude: ["@medusajs/js-sdk"],
     },
     ssr: {
       noExternal: ["@medusajs/js-sdk"],
