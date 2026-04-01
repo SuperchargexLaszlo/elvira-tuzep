@@ -9,7 +9,7 @@ let content = readFileSync(file, 'utf8');
 const patched = content
   .replace(/from "\.\/admin"/g, 'from "./admin/index.js"')
   .replace(/from "\.\/auth"/g, 'from "./auth/index.js"')
-  .replace(/from "\.\/client"/g, 'from "./client/index.js"')
+  .replace(/from "\.\/client"/g, 'from "./client.js"')
   .replace(/from "\.\/store"/g, 'from "./store/index.js"');
 
 if (content === patched) {
