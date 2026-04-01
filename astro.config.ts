@@ -98,10 +98,8 @@ export default defineConfig({
     resolve: {
       alias: {
         '~': path.resolve(__dirname, './src'),
+        '@medusajs/js-sdk': path.resolve(__dirname, './node_modules/@medusajs/js-sdk/dist/index.js'),
       },
-    },
-    optimizeDeps: {
-      exclude: ["@medusajs/js-sdk"],
     },
     ssr: {
       noExternal: ["@medusajs/js-sdk"],
