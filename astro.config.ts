@@ -101,7 +101,7 @@ export default defineConfig({
       },
     },
     optimizeDeps: {
-      exclude: ["@medusajs/js-sdk"],
+      include: ["@medusajs/js-sdk"],
     },
     ssr: {
       noExternal: ["@medusajs/js-sdk"],
