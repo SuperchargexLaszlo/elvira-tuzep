@@ -7,6 +7,7 @@
     "node": "^18.17.1 || ^20.3.0 || >= 21.0.0"
   },
   "scripts": {
+    "postinstall": "node scripts/patch-medusa.mjs",
     "dev": "astro dev",
     "start": "astro dev",
     "generate:products": "node ./src/scripts/generate-products-json.mjs",
