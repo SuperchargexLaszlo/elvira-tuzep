@@ -101,9 +101,6 @@ export default defineConfig({
         '@medusajs/js-sdk': path.resolve(__dirname, './node_modules/@medusajs/js-sdk/dist/index.js'),
       },
     },
-    ssr: {
-      noExternal: ["@medusajs/js-sdk"],
-    },
   },
 
   adapter: netlify(),
