@@ -12,7 +12,10 @@
       "Bash(Select-Object -Last 20)",
       "WebFetch(domain:matekmegoldasok.hu)",
       "Bash(npx @astrojs/upgrade)",
-      "Bash(find '/c/Users/Mészáros János/website_Creation/elvira_tuzep/src' -name *form* -o -name *contact*)"
+      "Bash(find '/c/Users/Mészáros János/website_Creation/elvira_tuzep/src' -name *form* -o -name *contact*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"fix: recursive patch for all @medusajs/js-sdk ESM directory imports:*)",
+      "Bash(git push:*)"
     ]
   }
 }
